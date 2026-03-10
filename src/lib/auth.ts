@@ -37,7 +37,7 @@ export type MfaChallenge = {
 };
 
 export const authPolicy = {
-  adminMfaRequired: true,
+  adminMfaRequired: false,
   clientPasskeyOptional: true,
   sessionMaxAgeHours: 12,
 } as const;
@@ -241,7 +241,7 @@ export async function requirePageRole(locale: string, roles: AuthRole[]): Promis
     );
   }
 
-  if (isAdminRole(session.role) && !session.mfaVerified) {
+  if (authPolicy.adminMfaRequired && isAdminRole(session.role) && !session.mfaVerified) {
     redirect(`/${locale}/login?error=mfa_required`);
   }
 

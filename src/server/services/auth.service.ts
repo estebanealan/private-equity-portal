@@ -1,4 +1,4 @@
-import { type MfaChallenge, type SessionUser, verifyPassword } from "@/lib/auth";
+import { type MfaChallenge, type SessionUser, authPolicy, verifyPassword } from "@/lib/auth";
 import {
   buildOtpAuthUrl,
   createTotpSecret,
@@ -42,14 +42,14 @@ export async function beginAuthentication(input: LoginInput): Promise<BeginAuthR
     return { status: "invalid_credentials" };
   }
 
-  if (!isAdminRole(user.role)) {
+  if (!isAdminRole(user.role) || !authPolicy.adminMfaRequired) {
     const session: SessionUser = {
       userId: user.userId,
       email: user.email,
       fullName: user.fullName,
       role: user.role,
       ...(user.clientProfileId ? { clientProfileId: user.clientProfileId } : {}),
-      mfaVerified: true,
+      mfaVerified: !authPolicy.adminMfaRequired,
     };
 
     await touchUserLastLogin(user.userId);
