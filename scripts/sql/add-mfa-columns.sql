@@ -1,0 +1,3 @@
+ALTER TABLE users
+  ADD COLUMN IF NOT EXISTS mfa_secret_encrypted text,
+  ADD COLUMN IF NOT EXISTS mfa_enrolled_at timestamptz;

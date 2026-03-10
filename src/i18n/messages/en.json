@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "brand": "Aurelia Capital",
+    "title": "Aurelia Capital | Institutional-grade private equity visibility",
+    "description": "Multilingual private equity platform with public site, admin workspace, and interactive client dashboard."
+  },
+  "home": {
+    "badge": "Private equity intelligence",
+    "title": "Institutional visibility for private capital, internal teams, and investors.",
+    "description": "One unified experience to present the firm, explain managed assets, and deliver interactive movement and performance visibility to every client.",
+    "primaryCta": "Enter client portal",
+    "secondaryCta": "Open admin workspace",
+    "panelLabel": "Capital monitored",
+    "panelCaption": "Reference layer for NAV, auditable movements, and sector exposure.",
+    "metrics": [
+      { "label": "Active sectors", "value": "06" },
+      { "label": "Reported vehicles", "value": "14" }
+    ],
+    "cards": [
+      {
+        "eyebrow": "Corporate site",
+        "title": "Trust and clarity from the first visit",
+        "description": "The firm, sectors, and assets are presented with a sober multilingual editorial layer."
+      },
+      {
+        "eyebrow": "Internal operations",
+        "title": "Robust movement registration",
+        "description": "Administrators work with controls, auditability, and clear separation between capture and review."
+      },
+      {
+        "eyebrow": "Client experience",
+        "title": "Dashboards that stay readable",
+        "description": "Every investor gets a clear visual narrative of positions, movements, and portfolio evolution."
+      }
+    ]
+  },
+  "admin": {
+    "eyebrow": "Admin workspace",
+    "title": "Financial operations with control and traceability.",
+    "subtitle": "Foundation to register movements, control approvals, and establish an institutional audit layer from day one.",
+    "movementTitle": "Initial operating flow",
+    "movementDescription": "The platform is structured to capture movements by client and asset, keep evidence, and decouple internal operations from the investor portal.",
+    "workflow": [
+      {
+        "step": "Step 01",
+        "title": "Validated capture",
+        "description": "Contributions, distributions, and transfers are registered through typed domain inputs."
+      },
+      {
+        "step": "Step 02",
+        "title": "Traceability",
+        "description": "Every mutation is tied to a user, request, and entity for compliance and operational support."
+      },
+      {
+        "step": "Step 03",
+        "title": "Secure publication",
+        "description": "Client-facing data is served from a separate layer designed for performance and clarity."
+      }
+    ],
+    "auditTitle": "Control posture",
+    "auditItems": [
+      { "label": "Admin MFA", "value": "Ready path" },
+      { "label": "Hardened sessions", "value": "Base design ready" },
+      { "label": "Audit trail", "value": "Schema included" }
+    ]
+  },
+  "portal": {
+    "eyebrow": "Client portal",
+    "title": "A clear view of committed capital and portfolio evolution.",
+    "subtitle": "The investor experience prioritizes legibility, trust, and context without losing operational depth.",
+    "metrics": [
+      {
+        "label": "Total NAV",
+        "value": "$18.4M",
+        "description": "Consolidated client value prepared for snapshots and comparisons."
+      },
+      {
+        "label": "Committed capital",
+        "value": "$22.0M",
+        "description": "Commitments grouped by vehicle and asset with historical visibility."
+      },
+      {
+        "label": "Net IRR",
+        "value": "14.8%",
+        "description": "Metric ready to connect to real calculations and time series."
+      }
+    ],
+    "timelineTitle": "Recent activity",
+    "timeline": [
+      {
+        "date": "Mar 2026",
+        "title": "Partial distribution",
+        "description": "Capital returned from regional infrastructure with a positive liquidity effect."
+      },
+      {
+        "date": "Feb 2026",
+        "title": "New commitment approved",
+        "description": "Allocation to the energy vehicle with documentation prepared for client access."
+      }
+    ],
+    "allocationsTitle": "Sector allocation",
+    "allocations": [
+      { "name": "Infrastructure", "share": "38%" },
+      { "name": "Energy", "share": "27%" },
+      { "name": "Logistics", "share": "19%" },
+      { "name": "Industrial", "share": "16%" }
+    ]
+  }
+}

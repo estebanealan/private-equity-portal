@@ -1,0 +1,33 @@
+# Secrets - never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+serviceAccountKey*.json
+
+# Dependencies
+node_modules/
+.pnp.*
+.pnpm-store/
+
+# Build
+.next/
+.vercel/
+dist/
+build/
+.turbo/
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/*.local.json
+.idea/
+
+# Local services
+.docker/

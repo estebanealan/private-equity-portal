@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "brand": "Aurelia Capital",
+    "title": "Aurelia Capital | Institutionelle Transparenz fuer Private Equity",
+    "description": "Mehrsprachige Private-Equity-Plattform mit oeffentlicher Website, Admin-Bereich und interaktivem Kunden-Dashboard."
+  },
+  "home": {
+    "badge": "Private equity intelligence",
+    "title": "Institutionelle Transparenz fuer Private Capital, interne Teams und Investoren.",
+    "description": "Eine gemeinsame Erfahrung, um die Firma, die verwalteten Assets und die interaktive Entwicklung jedes Kundenportfolios darzustellen.",
+    "primaryCta": "Zum Kundenportal",
+    "secondaryCta": "Zum Admin-Bereich",
+    "panelLabel": "Ueberwachtes Kapital",
+    "panelCaption": "Referenzschicht fuer NAV, auditierbare Bewegungen und Sektorallokation.",
+    "metrics": [
+      { "label": "Aktive Sektoren", "value": "06" },
+      { "label": "Berichtete Vehikel", "value": "14" }
+    ],
+    "cards": [
+      {
+        "eyebrow": "Unternehmensseite",
+        "title": "Vertrauen und Klarheit ab dem ersten Besuch",
+        "description": "Firma, Sektoren und Assets werden mit einer klaren mehrsprachigen Editorial-Ebene praesentiert."
+      },
+      {
+        "eyebrow": "Interne Operationen",
+        "title": "Robuste Erfassung von Bewegungen",
+        "description": "Administratoren arbeiten mit Kontrollen, Auditierbarkeit und klarer Trennung von Erfassung und Einsicht."
+      },
+      {
+        "eyebrow": "Kundenerlebnis",
+        "title": "Dashboards mit klarer Lesbarkeit",
+        "description": "Jeder Investor erhaelt eine visuelle Geschichte von Positionen, Bewegungen und Portfolioperformance."
+      }
+    ]
+  },
+  "admin": {
+    "eyebrow": "Admin-Bereich",
+    "title": "Finanzoperationen mit Kontrolle und Rueckverfolgbarkeit.",
+    "subtitle": "Grundlage zur Erfassung von Bewegungen, zur Steuerung von Freigaben und fuer institutionelle Auditierbarkeit ab Tag eins.",
+    "movementTitle": "Initialer Betriebsfluss",
+    "movementDescription": "Die Plattform ist bereits so strukturiert, dass Bewegungen nach Kunde und Asset erfasst und intern sauber getrennt bereitgestellt werden koennen.",
+    "workflow": [
+      {
+        "step": "Schritt 01",
+        "title": "Validierte Erfassung",
+        "description": "Einzahlungen, Ausschuettungen und Transfers werden ueber typisierte Domaenenstrukturen erfasst."
+      },
+      {
+        "step": "Schritt 02",
+        "title": "Rueckverfolgbarkeit",
+        "description": "Jede Mutation ist mit Benutzer, Request und Entitaet fuer Compliance und Support verbunden."
+      },
+      {
+        "step": "Schritt 03",
+        "title": "Sichere Freigabe",
+        "description": "Kundendaten werden ueber eine separate, performante und klar strukturierte Schicht bereitgestellt."
+      }
+    ],
+    "auditTitle": "Kontrollstatus",
+    "auditItems": [
+      { "label": "MFA fuer Admins", "value": "Vorbereitet" },
+      { "label": "Gehaertete Sessions", "value": "Basisdesign fertig" },
+      { "label": "Audit-Trail", "value": "Schema enthalten" }
+    ]
+  },
+  "portal": {
+    "eyebrow": "Kundenportal",
+    "title": "Ein klarer Blick auf gebundenes Kapital und Portfolioperformance.",
+    "subtitle": "Das Investorenerlebnis priorisiert Lesbarkeit, Vertrauen und Kontext ohne operative Tiefe zu verlieren.",
+    "metrics": [
+      {
+        "label": "Gesamter NAV",
+        "value": "$18.4M",
+        "description": "Konsolidierter Kundenwert fuer Snapshots und Vergleiche."
+      },
+      {
+        "label": "Gebundenes Kapital",
+        "value": "$22.0M",
+        "description": "Zusagen nach Vehikel und Asset mit historischer Sicht."
+      },
+      {
+        "label": "Netto-IRR",
+        "value": "14.8%",
+        "description": "Kennzahl bereit fuer reale Berechnungen und Zeitreihen."
+      }
+    ],
+    "timelineTitle": "Letzte Aktivitaet",
+    "timeline": [
+      {
+        "date": "Mar 2026",
+        "title": "Teilweise Ausschuettung",
+        "description": "Kapitalrueckfluss aus regionaler Infrastruktur mit positiver Wirkung auf Liquiditaet."
+      },
+      {
+        "date": "Feb 2026",
+        "title": "Neue Zusage genehmigt",
+        "description": "Allokation in ein Energievehikel mit vorbereiteter Kundendokumentation."
+      }
+    ],
+    "allocationsTitle": "Sektorallokation",
+    "allocations": [
+      { "name": "Infrastruktur", "share": "38%" },
+      { "name": "Energie", "share": "27%" },
+      { "name": "Logistik", "share": "19%" },
+      { "name": "Industrie", "share": "16%" }
+    ]
+  }
+}

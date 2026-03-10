@@ -1,0 +1,7 @@
+@layer base {
+  :root {
+    --font-display: "General Sans", "Segoe UI", sans-serif;
+    --font-body: "General Sans", "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", "Cascadia Code", monospace;
+  }
+}

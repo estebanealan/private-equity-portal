@@ -1,0 +1,72 @@
+{
+  "name": "private-equity-portal",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.32.0",
+  "engines": {
+    "node": ">=22.0.0 <25"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "biome check --write --unsafe .",
+    "prepare": "husky",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "services:up": "docker compose up -d",
+    "services:down": "docker compose down",
+    "services:reset": "docker compose down -v && docker compose up -d",
+    "db:seed": "node scripts/seed-dev.mjs",
+    "deploy:staging:check": "node scripts/check-staging-env.mjs"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "biome check --write --no-errors-on-unmatched",
+      "biome format --write --no-errors-on-unmatched"
+    ],
+    "*.{json,md,yml,yaml,css}": [
+      "biome format --write --no-errors-on-unmatched"
+    ]
+  },
+  "dependencies": {
+    "@auth/core": "0.34.3",
+    "@auth/drizzle-adapter": "1.11.1",
+    "@radix-ui/react-slot": "1.2.4",
+    "@sentry/nextjs": "10.42.0",
+    "bcryptjs": "3.0.3",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "drizzle-orm": "0.45.1",
+    "hono": "4.12.5",
+    "jose": "6.2.1",
+    "next": "16.1.6",
+    "pino": "10.3.1",
+    "postgres": "3.4.8",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "tailwind-merge": "3.5.0",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.6",
+    "@commitlint/cli": "20.4.3",
+    "@commitlint/config-conventional": "20.4.3",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "25.4.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitest/coverage-v8": "4.0.18",
+    "drizzle-kit": "0.31.9",
+    "husky": "9.1.7",
+    "lint-staged": "16.3.2",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vitest": "4.0.18"
+  }
+}

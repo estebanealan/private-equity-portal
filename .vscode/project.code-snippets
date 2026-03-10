@@ -1,0 +1,28 @@
+﻿{
+  "Server Component": {
+    "scope": "typescriptreact",
+    "prefix": "rsc",
+    "body": [
+      "export default async function ${1:ComponentName}() {",
+      "  return (",
+      "    <div>$0</div>",
+      "  );",
+      "}"
+    ],
+    "description": "Next.js server component"
+  },
+  "Zod Schema": {
+    "scope": "typescript",
+    "prefix": "zschema",
+    "body": [
+      "import { z } from \"zod\";",
+      "",
+      "export const ${1:name}Schema = z.object({",
+      "  $0",
+      "});",
+      "",
+      "export type ${1:name} = z.infer<typeof ${1:name}Schema>;"
+    ],
+    "description": "Zod schema with inferred type"
+  }
+}

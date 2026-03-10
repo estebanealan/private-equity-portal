@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "brand": "Aurelia Capital",
+    "title": "Aurelia Capital | Private equity con trazabilidad institucional",
+    "description": "Portal multilenguaje para private equity con sitio publico, panel administrativo y dashboard interactivo para clientes."
+  },
+  "home": {
+    "badge": "Private equity intelligence",
+    "title": "Visibilidad institucional para capital privado, equipos internos y clientes.",
+    "description": "Una experiencia unificada para presentar la firma, explicar los activos bajo gestion y ofrecer trazabilidad interactiva de movimientos y resultados a cada inversionista.",
+    "primaryCta": "Entrar al portal de clientes",
+    "secondaryCta": "Ir al panel administrativo",
+    "panelLabel": "Capital monitorizado",
+    "panelCaption": "Base de referencia para NAV, movimientos auditables y exposicion por sector.",
+    "metrics": [
+      { "label": "Sectores activos", "value": "06" },
+      { "label": "Vehiculos reportados", "value": "14" }
+    ],
+    "cards": [
+      {
+        "eyebrow": "Sitio corporativo",
+        "title": "Confianza y claridad desde la primera visita",
+        "description": "Presentamos tesis de inversion, assets y sectores con una capa editorial sobria y multilenguaje."
+      },
+      {
+        "eyebrow": "Operacion interna",
+        "title": "Registro robusto de movimientos",
+        "description": "Los administradores operan con controles, auditoria y separacion clara entre captura y consulta."
+      },
+      {
+        "eyebrow": "Experiencia del cliente",
+        "title": "Dashboards vivos y comprensibles",
+        "description": "Cada cliente accede a posiciones, movimientos y evolucion de su portafolio con una narrativa visual clara."
+      }
+    ]
+  },
+  "admin": {
+    "eyebrow": "Panel administrativo",
+    "title": "Operacion financiera con control y trazabilidad.",
+    "subtitle": "Base de trabajo para registrar movimientos, controlar aprobaciones y construir una auditoria institucional desde el dia uno.",
+    "movementTitle": "Flujo operativo inicial",
+    "movementDescription": "La plataforma ya esta estructurada para capturar movimientos por cliente y por activo, mantener evidencias y desacoplar el panel interno del portal del inversionista.",
+    "workflow": [
+      {
+        "step": "Paso 01",
+        "title": "Captura validada",
+        "description": "Registro de aportes, distribuciones y transferencias con controles de entrada y estructura de dominio."
+      },
+      {
+        "step": "Paso 02",
+        "title": "Trazabilidad",
+        "description": "Cada mutacion queda ligada a usuario, request y entidad para soporte operativo y compliance."
+      },
+      {
+        "step": "Paso 03",
+        "title": "Publicacion segura",
+        "description": "Los datos listos para clientes salen desde una capa separada, pensada para rendimiento y visibilidad clara."
+      }
+    ],
+    "auditTitle": "Postura de control",
+    "auditItems": [
+      { "label": "MFA obligatorio para admins", "value": "Preparado" },
+      { "label": "Sesiones endurecidas", "value": "Diseno base listo" },
+      { "label": "Audit trail", "value": "Esquema incluido" }
+    ]
+  },
+  "portal": {
+    "eyebrow": "Portal del cliente",
+    "title": "Una vista clara del capital comprometido y su evolucion.",
+    "subtitle": "La experiencia del inversionista prioriza legibilidad, confianza y contexto, sin sacrificar profundidad operativa.",
+    "metrics": [
+      {
+        "label": "NAV total",
+        "value": "$18.4M",
+        "description": "Valor neto consolidado del cliente, listo para snapshots y comparativos."
+      },
+      {
+        "label": "Capital comprometido",
+        "value": "$22.0M",
+        "description": "Montos comprometidos por vehiculo y asset con visibilidad historica."
+      },
+      {
+        "label": "IRR neta",
+        "value": "14.8%",
+        "description": "Indicador listo para conectarse con calculos reales y series temporales."
+      }
+    ],
+    "timelineTitle": "Actividad reciente",
+    "timeline": [
+      {
+        "date": "Mar 2026",
+        "title": "Distribucion parcial",
+        "description": "Salida de capital desde infraestructura regional con impacto positivo sobre liquidez disponible."
+      },
+      {
+        "date": "Feb 2026",
+        "title": "Nuevo compromiso aprobado",
+        "description": "Asignacion a vehiculo de energia con documentacion lista para consulta del cliente."
+      }
+    ],
+    "allocationsTitle": "Asignacion por sector",
+    "allocations": [
+      { "name": "Infraestructura", "share": "38%" },
+      { "name": "Energia", "share": "27%" },
+      { "name": "Logistica", "share": "19%" },
+      { "name": "Industrial", "share": "16%" }
+    ]
+  }
+}
