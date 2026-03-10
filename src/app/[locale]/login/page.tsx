@@ -3,16 +3,13 @@ import { redirect } from "next/navigation";
 
 import { Button } from "@/components/ui/Button";
 import {
-  clearMfaChallengeCookie,
   getDefaultRouteForRole,
   getMfaChallengeFromCookieStore,
   getSessionFromCookieStore,
-  setMfaChallengeCookie,
-  setSessionCookie,
 } from "@/lib/auth";
 import { env } from "@/lib/env";
 import { buildOtpAuthUrl } from "@/lib/mfa";
-import { beginAuthentication, completeAdminMfa } from "@/server/services/auth.service";
+import { loginAction, resetMfaAction, verifyMfaAction } from "./actions";
 
 type LoginPageProps = {
   params: Promise<{ locale: string }>;
@@ -36,109 +33,9 @@ export default async function LoginPage({ params, searchParams }: LoginPageProps
       ? buildOtpAuthUrl(mfaChallenge.email, mfaChallenge.setupSecret)
       : null;
 
-  function buildLoginUrl(values: Record<string, string | undefined>) {
-    const params = new URLSearchParams();
-
-    for (const [key, value] of Object.entries(values)) {
-      if (value) {
-        params.set(key, value);
-      }
-    }
-
-    const query = params.toString();
-    return query ? `/${locale}/login?${query}` : `/${locale}/login`;
-  }
-
-  async function loginAction(formData: FormData) {
-    "use server";
-
-    const email = String(formData.get("email") ?? "");
-    const password = String(formData.get("password") ?? "");
-    const requestedRedirect = String(formData.get("redirectTo") ?? "");
-
-    const result = await beginAuthentication({ email, password });
-
-    if (result.status === "invalid_credentials") {
-      redirect(
-        buildLoginUrl({
-          error: "invalid",
-          ...(requestedRedirect ? { redirect: requestedRedirect } : {}),
-        }),
-      );
-    }
-
-    if (result.status === "authenticated") {
-      await clearMfaChallengeCookie();
-      await setSessionCookie(result.session);
-
-      if (requestedRedirect.startsWith(`/${locale}/`)) {
-        redirect(requestedRedirect);
-      }
-
-      redirect(getDefaultRouteForRole(locale, result.session.role));
-    }
-
-    await setMfaChallengeCookie(result.challenge);
-
-    redirect(
-      buildLoginUrl({
-        ...(requestedRedirect ? { redirect: requestedRedirect } : {}),
-      }),
-    );
-  }
-
-  async function verifyMfaAction(formData: FormData) {
-    "use server";
-
-    const code = String(formData.get("code") ?? "");
-    const requestedRedirect = String(formData.get("redirectTo") ?? "");
-    const challenge = await getMfaChallengeFromCookieStore();
-
-    if (!challenge) {
-      redirect(
-        buildLoginUrl({
-          error: "mfa_expired",
-          ...(requestedRedirect ? { redirect: requestedRedirect } : {}),
-        }),
-      );
-    }
-
-    try {
-      const session = await completeAdminMfa(challenge, { code });
-
-      if (!session) {
-        redirect(
-          buildLoginUrl({
-            error: "mfa_invalid",
-            ...(requestedRedirect ? { redirect: requestedRedirect } : {}),
-          }),
-        );
-      }
-
-      await clearMfaChallengeCookie();
-      await setSessionCookie(session);
-
-      if (requestedRedirect.startsWith(`/${locale}/`)) {
-        redirect(requestedRedirect);
-      }
-
-      redirect(getDefaultRouteForRole(locale, session.role));
-    } catch {
-      redirect(
-        buildLoginUrl({
-          error: "mfa_invalid",
-          ...(requestedRedirect ? { redirect: requestedRedirect } : {}),
-        }),
-      );
-    }
-  }
-
-  async function resetMfaAction() {
-    "use server";
-
-    await clearMfaChallengeCookie();
-    redirect(`/${locale}/login`);
-  }
+  const boundLoginAction = loginAction.bind(null, locale, redirectTo ?? "");
+  const boundVerifyMfaAction = verifyMfaAction.bind(null, locale, redirectTo ?? "");
+  const boundResetMfaAction = resetMfaAction.bind(null, locale);
 
   return (
     <main className="min-h-screen px-6 py-10 sm:px-8 lg:px-12">
@@ -225,7 +122,7 @@ export default async function LoginPage({ params, searchParams }: LoginPageProps
           ) : null}
 
           {!isMfaStep ? (
-            <form action={loginAction} className="mt-6 grid gap-4">
+            <form action={boundLoginAction} className="mt-6 grid gap-4">
               <input name="redirectTo" type="hidden" value={redirectTo ?? ""} />
               <label className="grid gap-2 text-sm text-surface-700">
                 Email
@@ -252,7 +149,7 @@ export default async function LoginPage({ params, searchParams }: LoginPageProps
               </Button>
             </form>
           ) : (
-            <form action={verifyMfaAction} className="mt-6 grid gap-4">
+            <form action={boundVerifyMfaAction} className="mt-6 grid gap-4">
               <input name="redirectTo" type="hidden" value={redirectTo ?? ""} />
               <label className="grid gap-2 text-sm text-surface-700">
                 6-digit code
@@ -273,7 +170,7 @@ export default async function LoginPage({ params, searchParams }: LoginPageProps
           )}
 
           {isMfaStep ? (
-            <form action={resetMfaAction} className="mt-4">
+            <form action={boundResetMfaAction} className="mt-4">
               <Button size="lg" type="submit" variant="secondary">
                 Use another account
               </Button>
